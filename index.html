@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+  HOW TO CUSTOMIZE (for you, not the person opening the page)
+  1. Edit captions in script.js — search for GALLERY_CAPTIONS.
+  2. Add photos to images/ named 1.jpg through 6.jpg (see README in images/).
+  3. Letter text is fixed below — edit it here in index.html only.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@ital@9..144,400..700,0..1&family=Quicksand:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- reusable flower symbol, referenced everywhere via <use> -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="flower-bloom" viewBox="0 0 60 60">
+      <ellipse cx="20" cy="20" rx="8" ry="12" fill="currentColor" transform="rotate(-20 20 20)"/>
+      <ellipse cx="32" cy="14" rx="8" ry="12" fill="currentColor" transform="rotate(15 32 14)"/>
+      <ellipse cx="40" cy="24" rx="8" ry="12" fill="currentColor" transform="rotate(60 40 24)"/>
+      <ellipse cx="34" cy="36" rx="8" ry="12" fill="currentColor" transform="rotate(120 34 36)"/>
+      <ellipse cx="22" cy="34" rx="8" ry="12" fill="currentColor" transform="rotate(-100 22 34)"/>
+      <circle cx="29" cy="24" r="7" fill="#6B9B37"/>
+    </symbol>
+  </defs>
+</svg>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="celebration-overlay" id="celebration-overlay" aria-hidden="true">
+  <div class="celebration-text" id="celebration-text"></div>
+  <div class="balloon-layer" id="balloon-layer"></div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="petal-field" id="petal-field"></div>
+  <div class="balloon-field" id="balloon-field"></div>
+
+  <svg class="popper popper-left" viewBox="0 0 60 60" aria-hidden="true"><g><path d="M10 50 L28 28" stroke="#FF6B5B" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="26" r="3" fill="#FFC93C"/><circle cx="14" cy="14" r="2.4" fill="#FF8FA3"/><circle cx="22" cy="8" r="2" fill="#6B9B37"/><circle cx="8" cy="26" r="2" fill="#FFC93C"/><circle cx="34" cy="12" r="2.4" fill="#FF6B5B"/></g></svg>
+  <svg class="popper popper-right" viewBox="0 0 60 60" aria-hidden="true"><g><path d="M50 50 L32 28" stroke="#FF8FA3" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="26" r="3" fill="#6B9B37"/><circle cx="46" cy="14" r="2.4" fill="#FFC93C"/><circle cx="38" cy="8" r="2" fill="#FF6B5B"/><circle cx="52" cy="26" r="2" fill="#FF8FA3"/><circle cx="26" cy="12" r="2.4" fill="#FFC93C"/></g></svg>
+
+  <use href="#flower-bloom" class="deco-flower df1" style="color:var(--rose)"></use>
+  <use href="#flower-bloom" class="deco-flower df2" style="color:var(--yellow)"></use>
+  <use href="#flower-bloom" class="deco-flower df3" style="color:var(--coral)"></use>
+  <use href="#flower-bloom" class="deco-flower df4" style="color:var(--rose)"></use>
+
+  <h1>Happy Birthday<span class="accent">KATHIIIII BBG💋💗</span></h1>
+  <p class="sub">YAYYYYY a fresh new year for you so u can be cool gang shi along with being effortlessly wonderful, cute and pretty </p>
+
+  <svg class="hero-flower" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- stem -->
+    <path d="M120 148 Q118 118 120 92" stroke="#5A8F2E" stroke-width="5" stroke-linecap="round"/>
+    <path d="M120 118 Q98 108 88 98" stroke="#5A8F2E" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M120 104 Q142 96 152 88" stroke="#5A8F2E" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- leaves -->
+    <ellipse cx="94" cy="104" rx="14" ry="7" fill="#7CB342" transform="rotate(-28 94 104)"/>
+    <ellipse cx="146" cy="92" rx="14" ry="7" fill="#8BC34A" transform="rotate(24 146 92)"/>
+    <!-- back petals -->
+    <g opacity="0.85">
+      <ellipse cx="120" cy="52" rx="14" ry="22" fill="#FFD9DC" transform="rotate(0 120 52)"/>
+      <ellipse cx="120" cy="52" rx="14" ry="22" fill="#FFE9B8" transform="rotate(72 120 52)"/>
+      <ellipse cx="120" cy="52" rx="14" ry="22" fill="#FFD9DC" transform="rotate(144 120 52)"/>
+      <ellipse cx="120" cy="52" rx="14" ry="22" fill="#FFE9B8" transform="rotate(216 120 52)"/>
+      <ellipse cx="120" cy="52" rx="14" ry="22" fill="#FFD9DC" transform="rotate(288 120 52)"/>
+    </g>
+    <!-- front petals -->
+    <ellipse cx="120" cy="50" rx="15" ry="24" fill="#FF8FA3" transform="rotate(36 120 50)"/>
+    <ellipse cx="120" cy="50" rx="15" ry="24" fill="#FFC93C" transform="rotate(108 120 50)"/>
+    <ellipse cx="120" cy="50" rx="15" ry="24" fill="#FF6B5B" transform="rotate(180 120 50)"/>
+    <ellipse cx="120" cy="50" rx="15" ry="24" fill="#FF8FA3" transform="rotate(252 120 50)"/>
+    <ellipse cx="120" cy="50" rx="15" ry="24" fill="#FFC93C" transform="rotate(324 120 50)"/>
+    <!-- center -->
+    <circle cx="120" cy="50" r="16" fill="#6B9B37"/>
+    <circle cx="114" cy="44" r="4" fill="#FFC93C" opacity="0.9"/>
+    <circle cx="126" cy="46" r="3.5" fill="#FFE9B8" opacity="0.95"/>
+    <circle cx="120" cy="56" r="3" fill="#FFC93C" opacity="0.85"/>
+    <!-- small bud accent -->
+    <circle cx="168" cy="78" r="10" fill="#FF8FA3" opacity="0.75"/>
+    <circle cx="168" cy="78" r="5" fill="#FFC93C"/>
+  </svg>
+
+  <div class="scroll-cue">
+    <span>keep going</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#6B9B37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <div class="garland" aria-hidden="true">
+    <svg class="garland-line" viewBox="0 0 1000 40" preserveAspectRatio="none"><path d="M0 8 Q 60 34 120 8 T 240 8 T 360 8 T 480 8 T 600 8 T 720 8 T 840 8 T 960 8 T 1080 8" stroke="#C8A86B" stroke-width="2" fill="none"/></svg>
+    <use href="#flower-bloom" class="garland-flower" style="left:6%; color:var(--coral)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:20%; color:var(--yellow)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:34%; color:var(--rose)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:48%; color:var(--coral)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:62%; color:var(--yellow)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:76%; color:var(--rose)"></use>
+    <use href="#flower-bloom" class="garland-flower" style="left:90%; color:var(--coral)"></use>
+  </div>
+</section>
+<div class="scallop"></div>
+
+<!-- ================= RIBBON ================= -->
+<div class="ribbon-wrap">
+  <div class="wrap">
+    <div class="ribbon">
+      <p>Made with love · For my Eisbaerchen · By yours truly 🌼</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A few of my favorite pics of u</h2>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+<div class="scallop flip to-cream2"></div>
+
+<!-- ================= NOTE ================= -->
+<section class="note-section">
+  <div class="wrap">
+    <p class="eyebrow">for your eyes only</p>
+    <h2>A little something I wrote you</h2>
+    <div class="envelope-stage">
+      <div class="envelope" id="envelope">
+        <div class="letter">
+          <use href="#flower-bloom" class="letter-corner corner-tl" style="color:var(--rose)"></use>
+          <use href="#flower-bloom" class="letter-corner corner-br" style="color:var(--yellow)"></use>
+          <h3>my dearest,</h3>
+          <div id="letter-text">
+            <p>Happy birthday to the person who makes me genuinely happy and makes me laugh.</p>
+            <p>I hope today feels light and easy and exactly like you, a little silly, a little soft, and full of the things that make you smile. Thank you for finding me, for laughing at my terrible jokes, and for being my favorite person this fast.</p>
+            <p>i wish to spend a lot of more time with you. I LOVEEEE YOUUUUUUUUUUUUUU</p>
+          </div>
+          <p class="letter-sign">— yours, always</p>
+        </div>
+        <div class="flap">
+          <span class="flap-label">for you, on your day</span>
+        </div>
+        <div class="seal" id="seal">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.7 9 2.5 5 6.5 5c2 0 3.3 1.1 4 2.2C11.2 6.1 12.5 5 14.5 5 18.5 5 20.3 9 18.5 12.5 16 16.65 12 21 12 21z" fill="white"/></svg>
+        </div>
+        <div class="env-body"></div>
+      </div>
+    </div>
+    <p class="open-hint" id="open-hint">tap the envelope to open it</p>
+  </div>
+</section>
+<div class="scallop"></div>
+
+<!-- ================= SURPRISE ================= -->
+<section class="surprise-section">
+  <div class="wrap">
+    <p class="eyebrow">one more thing</p>
+    <h2 style="margin-bottom:22px;">go on, you know you want to</h2>
+    <button class="surprise-btn" id="surprise-btn">let's celebrate 🎉</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
