@@ -57,12 +57,12 @@
      Photos load from images/1.jpg or images/1.jpeg (etc.) in the repo.
      Edit GALLERY_CAPTIONS below — visitors cannot change photos or captions. */
   var GALLERY_CAPTIONS = [
-    'the day it all started',
-    'you, mid laugh',
-    'my favorite view',
-    'us, being ridiculous',
-    'that one perfect trip',
-    'just because'
+    'jus u looking flawlessly pretty😍',
+    'yoo kleiner kinder',
+    'u da real silly psyduck, PSYYDUCk',
+    'KATHIISAURASSSSSSSSSS',
+    'SILLLY MONKEEEE (u da real zoo)',
+    'u da real cool batman twin xoxoxoxoxoxo'
   ];
   var gallery = document.getElementById('gallery');
   var SLOTS = GALLERY_CAPTIONS.length;
