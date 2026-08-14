@@ -118,7 +118,7 @@
   envelope.addEventListener('click', function(){
     opened = !opened;
     envelope.classList.toggle('open', opened);
-    openHint.textContent = opened ? 'enjoy the note 💌' : 'tap the envelope to open it';
+    openHint.textContent = opened ? 'MWAHHHHHHHHHHWHHAHAHAHHA💌' : 'tap the envelope to open it';
   });
 
   /* ---------- confetti + fireworks canvas ---------- */
